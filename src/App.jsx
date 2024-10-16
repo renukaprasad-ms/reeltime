@@ -1,7 +1,14 @@
-import "./App.css"; 
+import "./App.css";
+import Header from "./pages/header/Header";
+import Home from "./pages/home/Home";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <Home />
+    </>
+  );
 }
 
 export default App;
