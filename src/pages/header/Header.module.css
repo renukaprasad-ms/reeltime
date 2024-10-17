@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: transparent;
+  cursor: pointer;
 }
 .logoSec {
   width: 50%;
