@@ -4,10 +4,9 @@ import { useState } from "react";
 
 const Hero = () => {
   const data = UseFetch("/movie/popular");
-  const img_URL = "https://image.tmdb.org/t/p/w500";
+  const img_URL = "https://image.tmdb.org/t/p/original";
   const img =
     img_URL + data?.results[Math.floor(Math.random() * 20)].backdrop_path;
-  console.log(data?.results[Math.floor(Math.random() * 20)].backdrop_path);
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroBanner}>

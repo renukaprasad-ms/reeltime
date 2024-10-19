@@ -1,12 +1,14 @@
-import styles from "./Home.module.css"
-import Hero from "./hero/Hero"
+import styles from "./Home.module.css";
+import Hero from "./hero/Hero";
+import Trending from "./trending/Trending";
 
 const Home = () => {
   return (
     <div className={styles.HeroContainer}>
-            <Hero/>
+      <Hero />
+      <Trending/>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

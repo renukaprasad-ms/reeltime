@@ -1,9 +1,9 @@
-.heroContainer{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.heroContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroBanner {
@@ -21,40 +21,110 @@ img {
   object-fit: cover;
   opacity: 0.5;
 }
-.heromsg{
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.heromsg {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.heromsg h1{
-    font-size: 100px;
+.heromsg h1 {
+  font-size: 100px;
 }
 .heromsg p {
-    font-size: 25px;
+  font-size: 25px;
 }
-.heroInput{
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.heroInput {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.heroInput  input{
-    width: 650px;
-    height: 50px;
-    background-color: white;
-    padding: 20px;
-    border: none;
-    border-radius: 30px 0 0 30px;
+.heroInput input {
+  width: 650px;
+  height: 50px;
+  background-color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 30px 0 0 30px;
 }
-.heroInput button{
-    color: white;
-    width: 130px;
-    height: 50px;
-    background-color: #fff;
-    border: none;
-    border-radius: 0 30px 30px 0;
-    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(125, 48, 57) 50%, rgb(248, 1, 14) 100%);
+.heroInput button {
+  color: white;
+  width: 130px;
+  height: 50px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(125, 48, 57) 50%,
+    rgb(248, 1, 14) 100%
+  );
+}
+@media screen and (max-width: 1200px) {
+  .heromsg h1 {
+    font-size: 75px;
+  }
+  .heromsg p {
+    font-size: 18px;
+  }
+  .heroInput input {
+    width: 480px;
+    height: 40px;
+  }
+  .heroInput button {
+    width: 100px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 777px) {
+  .heroContainer {
+    height: 70vh;
+  }
+  .heroBanner{
+    height: 400px;
+  }
+  .heromsg h1 {
+    font-size: 50px;
+  }
+  .heromsg p {
+    font-size: 12px;
+  }
+  .heroInput input {
+    width: 325px;
+    height: 30px;
+  }
+  .heroInput button {
+    width: 65px;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .heroContainer {
+    height: 50vh;
+  }
+  .heroBanner{
+    height: 300px;
+  }
+  .heromsg h1 {
+    font-size: 30px;
+  }
+  .heroInput {
+    margin-top: 10px;
+  }
+  .heromsg p {
+    font-size: 10px;
+  }
+  .heroInput input {
+    width: 200px;
+    height: 25px;
+    padding: 10px;
+  }
+  .heroInput button {
+    width: 50px;
+    height: 25px;
+    font-size: 8px;
+  }
 }

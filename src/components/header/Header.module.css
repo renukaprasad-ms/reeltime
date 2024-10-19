@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: transparent;
   cursor: pointer;
 }
 .logoSec {
@@ -47,7 +46,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  background-color: #252525;
+  background-color: black;
   margin-top: 140px;
   border-radius: 5px;
   display: flex;

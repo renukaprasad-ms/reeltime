@@ -1,0 +1,59 @@
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.carouselContainer {
+  width: auto;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  gap: 25px;
+}
+.carouselCard {
+  margin-top: 25px;
+  width: 250px;
+  height: 450px;
+  position: relative;
+  flex: 0 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: start;
+  justify-content: center;
+}
+.cardImage{
+  width: 100%;
+  height: 350px;
+  transition: opacity 0.5s; 
+}
+.cardImage:hover {
+  opacity: 0.5;
+}
+.carouselCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 1;
+}
+.carouselCard h3{
+  margin-top: 50px;
+  font-size: 15px;
+}
+.ratingCircle{
+  width: 50px;
+  height: 50px;
+  bottom: 80px;
+  background-color:white;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}

@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./pages/header/Header";
+import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./pages/footer/Footer";
+import Footer from "./components/footer/Footer";
 import Explore from "./pages/explore/Explore";
 import Details from "./pages/details/Details";
 
