@@ -9,8 +9,8 @@ const Trending = () => {
   return (
     <div className={styles.trendingContainer}>
       <div className={styles.trendingHeader}>
-        <h2>Now Playing</h2>
-        <div className={styles.timePeroid}>
+        <h2>Trending</h2>
+        <div className={styles.timeWindow}>
           <p
             className={timeWindow == "day" ? styles.selected : ""}
             onClick={() => {

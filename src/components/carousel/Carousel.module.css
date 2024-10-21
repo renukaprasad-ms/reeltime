@@ -57,3 +57,55 @@
   justify-content: center;
   color: black;
 }
+@media screen and (max-width:1200px) {
+  .carouselContainer{
+    height: 450px;
+    gap: 20px;
+  }
+  .carouselCard{
+    width: 200px;
+    height: 380px;
+  }
+  .carouselCard h3{
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .carouselCard p{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width:777px) {
+  .carouselContainer{
+    height: 350px;
+    gap: 15px;
+  }
+  .carouselCard{
+    width: 150px;
+    height: 300px;
+  }
+  .carouselCard h3{
+    margin-top: 40px;
+    font-size: 10px;
+  }
+  .carouselCard p{
+    font-size: 10px;
+  }
+  .ratingCircle{
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (max-width:530px) {
+  .carouselContainer{
+    height: 280px;
+    gap: 10px;
+  }
+  .carouselCard{
+    width: 100px;
+    height: 220px;
+  }
+  .carouselCard h3{
+    margin-top: 20px;
+    font-size: 8px;
+  }
+}

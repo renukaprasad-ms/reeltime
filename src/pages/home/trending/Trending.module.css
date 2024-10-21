@@ -1,4 +1,5 @@
 .trendingContainer {
+  margin-top: 100px;
   width: 100%;
   height: 550px;
   display: flex;
@@ -9,7 +10,7 @@
 .trendingHeader {
   width: calc(100% - 200px);
   height: 80px;
-  margin-top: 50px;
+  margin-top: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +18,7 @@
 .trendingHeader h2 {
   color: white;
 }
-.timePeroid {
+.timeWindow {
   width: 200px;
   height: 50px;
   border-radius: 25px;
@@ -26,7 +27,7 @@
   justify-content: center;
   background-color: white;
 }
-.timePeroid p {
+.timeWindow p {
   width: 95px;
   height: 45px;
   border-radius: 25px;
@@ -44,6 +45,80 @@
     rgb(248, 1, 14) 100%
   );
 }
-.trendingBody{
-    width: calc(100% - 200px);
+.trendingBody {
+  width: calc(100% - 200px);
+}
+
+@media screen and (max-width: 1200px) {
+  .trendingContainer {
+    height: 450px;
+  }
+  .trendingHeader h2 {
+    font-size: 20px;
+  }
+  .trendingHeader {
+    width: calc(100% - 150px);
+    height: 60px;
+  }
+  .timeWindow {
+    width: 160px;
+    height: 35px;
+  }
+  .timeWindow p {
+    width: 78px;
+    height: 32px;
+    font-size: 15px;
+  }
+  .trendingBody {
+    width: calc(100% - 150px);
+  }
+}
+@media screen and (max-width: 777px) {
+  .trendingContainer{
+    height: 350px;
+  }
+  .trendingHeader h2 {
+    font-size: 15px;
+  }
+  .trendingHeader {
+    width: calc(100% - 100px);
+    margin-top: 100px;
+    height: 40px;
+  }
+  .timeWindow {
+    width: 100px;
+    height: 25px;
+  }
+  .timeWindow p {
+    width: 48px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .trendingBody {
+    width: calc(100% - 100px);
+  }
+}
+@media screen and (max-width: 530px) {
+  .trendingContainer{
+    height: 200px;
+  }
+  .trendingHeader h2 {
+    font-size: 10px;
+  }
+  .trendingHeader {
+    width: calc(100% - 50px);
+    height: 20px;
+  }
+  .timeWindow {
+    width: 60px;
+    height: 15px;
+  }
+  .timeWindow p {
+    width: 29px;
+    height: 13px;
+    font-size: 6px;
+  }
+  .trendingBody {
+    width: calc(100% - 50px);
+  }
 }

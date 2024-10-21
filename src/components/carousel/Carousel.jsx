@@ -18,7 +18,7 @@ const Carousel = ({ data }) => {
                 {item?.vote_average.toFixed(1)}
               </p>
             </div>
-            <h3>{item?.original_title}</h3>
+            <h3>{item?.original_title || item.original_name}</h3>
             <p>{item?.release_date}</p>
           </div>
         ))}

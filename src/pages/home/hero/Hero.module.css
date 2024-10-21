@@ -64,6 +64,9 @@ img {
   );
 }
 @media screen and (max-width: 1200px) {
+  .heroContainer{
+    height: 50vh;
+  }
   .heromsg h1 {
     font-size: 75px;
   }
@@ -81,7 +84,7 @@ img {
 }
 @media screen and (max-width: 777px) {
   .heroContainer {
-    height: 70vh;
+    height: 50vh;
   }
   .heroBanner{
     height: 400px;
@@ -103,7 +106,7 @@ img {
 }
 @media screen and (max-width: 530px) {
   .heroContainer {
-    height: 50vh;
+    height: 30vh;
   }
   .heroBanner{
     height: 300px;

@@ -1,5 +1,7 @@
 import styles from "./Home.module.css";
 import Hero from "./hero/Hero";
+import Popular from "./popular/Popular";
+import TopRated from "./toprated/TopRated";
 import Trending from "./trending/Trending";
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
     <div className={styles.HeroContainer}>
       <Hero />
       <Trending/>
+      <Popular/>
+      <TopRated/>
     </div>
   );
 };
