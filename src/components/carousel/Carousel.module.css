@@ -7,16 +7,15 @@
 
 .carouselContainer {
   width: auto;
-  height: 500px;
+  height: 450px;
   display: flex;
   align-items: center;
   overflow-x: scroll;
   gap: 25px;
 }
 .carouselCard {
-  margin-top: 25px;
   width: 250px;
-  height: 450px;
+  height: 100%;
   position: relative;
   flex: 0 0 auto;
   color: white;
@@ -25,6 +24,7 @@
   gap: 5px;
   align-items: start;
   justify-content: center;
+  overflow: hidden;
 }
 .cardImage{
   width: 100%;
@@ -42,7 +42,7 @@
   opacity: 1;
 }
 .carouselCard h3{
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 15px;
 }
 .ratingCircle{
@@ -58,54 +58,74 @@
   color: black;
 }
 @media screen and (max-width:1200px) {
-  .carouselContainer{
-    height: 450px;
-    gap: 20px;
+  .carouselContainer {
+    height: 400px;
+    gap: 25px;
   }
-  .carouselCard{
-    width: 200px;
-    height: 380px;
+  .carouselCard {
+    width: 220px;
+  }
+  .cardImage{
+    height: 320px;
   }
   .carouselCard h3{
-    margin-top: 40px;
-    font-size: 13px;
+    margin-top: 20px;
+    font-size: 15px;
   }
   .carouselCard p{
-    font-size: 13px;
+    font-size: 15px;
+  }
+  .ratingCircle{
+    width: 50px;
+    height: 50px;
+    bottom: 80px;
   }
 }
 @media screen and (max-width:777px) {
-  .carouselContainer{
+  .carouselContainer {
     height: 350px;
-    gap: 15px;
+    gap: 20px;
   }
-  .carouselCard{
-    width: 150px;
-    height: 300px;
+  .carouselCard {
+    width: 180px;
+  }
+  .cardImage{
+    height: 280px;
   }
   .carouselCard h3{
-    margin-top: 40px;
+    margin-top: 15px;
+    font-size: 12px;
+  }
+  .carouselCard p{
+    font-size: 12px;
+  }
+  .ratingCircle{
+    width: 35px;
+    height: 35px;
+    bottom: 70px;
+  }
+}
+@media screen and (max-width:530px) {
+  .carouselContainer {
+    height: 300px;
+    gap: 15px;
+  }
+  .carouselCard {
+    width: 150px;
+  }
+  .cardImage{
+    height: 220px;
+  }
+  .carouselCard h3{
+    margin-top: 15px;
     font-size: 10px;
   }
   .carouselCard p{
     font-size: 10px;
   }
   .ratingCircle{
-    width: 30px;
-    height: 30px;
-  }
-}
-@media screen and (max-width:530px) {
-  .carouselContainer{
-    height: 280px;
-    gap: 10px;
-  }
-  .carouselCard{
-    width: 100px;
-    height: 220px;
-  }
-  .carouselCard h3{
-    margin-top: 20px;
-    font-size: 8px;
+    width: 25px;
+    height: 25px;
+    bottom: 65px;
   }
 }

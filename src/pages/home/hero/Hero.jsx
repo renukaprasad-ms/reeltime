@@ -1,6 +1,5 @@
 import styles from "./Hero.module.css";
 import UseFetch from "../../../hook/UseFetch";
-import { useState } from "react";
 
 const Hero = () => {
   const data = UseFetch("/movie/popular");

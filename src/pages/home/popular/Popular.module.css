@@ -1,125 +1,128 @@
 .popularContainer {
-    margin-top: 100px;
-    width: 100%;
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+.popularHeader {
+  width: calc(100% - 200px);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popularHeader h2 {
+  color: white;
+}
+.timeWindow {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.timeWindow p {
+  width: 95px;
+  height: 45px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.selected {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(125, 48, 57) 50%,
+    rgb(248, 1, 14) 100%
+  );
+}
+.popularBody {
+  width: calc(100% - 200px);
+  height: 470px;
+}
+
+@media screen and (max-width: 1200px) {
+  .popularContainer {
+    height: 500px;
+    margin-top: 50px;
   }
   .popularHeader {
-    width: calc(100% - 200px);
+    width: calc(100% - 150px);
     height: 80px;
-    margin-top: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   .popularHeader h2 {
-    color: white;
+    font-size: 20px;
   }
   .timeWindow {
-    width: 200px;
-    height: 50px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
+    width: 170px;
+    height: 45px;
   }
   .timeWindow p {
-    width: 95px;
-    height: 45px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    width: 83px;
+    height: 43px;
   }
-  .selected {
-    color: white;
-    background: linear-gradient(
-      90deg,
-      rgb(0, 0, 0) 0%,
-      rgb(125, 48, 57) 50%,
-      rgb(248, 1, 14) 100%
-    );
+  .popularBody {
+    width: calc(100% - 150px);
+    height: 400px;
   }
-  .popularBody{
-      width: calc(100% - 200px);
+}
+@media screen and (max-width: 777px) {
+  .popularContainer {
+    height: 400px;
+    margin-top: 50px;
   }
-  
-  @media screen and (max-width:1200px) {
-    .popularContainer{
-        height: 450px;
-        margin-top: 70px;
-    }
-    .popularHeader h2{
-      font-size: 20px;
-    }
-    .popularHeader{
-      width: calc(100% - 150px);
-      margin-top: 150px;
-    }
-    .timeWindow{
-      width: 160px;
-      height: 35px;
-    }
-    .timeWindow p{
-      width: 78px;
-      height: 32px;
-      font-style: 15px;
-    }
-    .popularBody{
-      width: calc(100% - 150px);
-    }
+  .popularHeader {
+    width: calc(100% - 100px);
+    height: 60px;
   }
-  @media screen and (max-width:777px) {
-    .popularContainer{
-        height: 350px;
-        margin-top: 70px;
-    }
-    .popularHeader h2{
-      font-size: 15px;
-    }
-    .popularHeader{
-      width: calc(100% - 100px);
-      margin-top: 30px;
-      height: 40px;
-    }
-    .timeWindow{
-      width: 100px;
-      height: 25px;
-    }
-    .timeWindow p{
-      width: 48px;
-      height: 22px;
-      font-size: 10px;
-    }
-    .popularBody{
-      width: calc(100% - 100px);
-    }
+  .popularHeader h2 {
+    font-size: 15px;
   }
-  @media screen and (max-width:530px) {
-    .popularHeader h2{
-      font-size: 10px;
-    }
-    .popularHeader{
-      width: calc(100% - 50px);
-      height: 20px;
-      margin-top: 10px;
-    }
-    .timeWindow{
-      width: 60px;
-      height: 15px;
-    }
-    .timeWindow p{
-      width: 29px;
-      height: 13px;
-      font-size: 6px;
-    }
-    .popularBody{
-      width: calc(100% - 50px);
-    }
+  .timeWindow {
+    width: 90px;
+    height: 27px;
   }
-  
+  .timeWindow p {
+    width: 43px;
+    height: 25px;
+    font-size: 10px;
+  }
+  .popularBody {
+    width: calc(100% - 100px);
+    height: 300px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .popularContainer {
+    height: 300px;
+    margin-top: 50px;
+  }
+  .popularHeader {
+    width: calc(100% - 50px);
+    height: 40px;
+  }
+  .popularHeader h2 {
+    font-size: 10px;
+  }
+  .timeWindow {
+    width: 70px;
+    height: 20px;
+  }
+  .timeWindow p {
+    width: 34px;
+    height: 18px;
+    font-size: 8px;
+  }
+  .popularBody {
+    width: calc(100% - 50px);
+    height: 250px;
+  }
+}

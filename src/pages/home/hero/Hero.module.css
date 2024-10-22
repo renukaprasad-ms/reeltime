@@ -8,18 +8,17 @@
 
 .heroBanner {
   width: 100%;
-  height: 700px;
+  height: 100vh;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   opacity: 0.5;
+  object-fit: cover;
 }
 .heromsg {
   color: white;
@@ -55,6 +54,7 @@ img {
   height: 50px;
   background-color: #fff;
   border: none;
+  font-size: 20px;
   border-radius: 0 30px 30px 0;
   background: linear-gradient(
     90deg,
@@ -64,70 +64,80 @@ img {
   );
 }
 @media screen and (max-width: 1200px) {
-  .heroContainer{
-    height: 50vh;
+  .heroContainer {
+    height: 85vh;
+  }
+  .heroBanner {
+    height: 85vh;
   }
   .heromsg h1 {
-    font-size: 75px;
+    font-size: 70px;
   }
   .heromsg p {
-    font-size: 18px;
+    font-size: 17px;
   }
   .heroInput input {
-    width: 480px;
-    height: 40px;
+    width: 500px;
+    height: 45px;
+    padding: 15px;
   }
   .heroInput button {
-    width: 100px;
-    height: 40px;
+    width: 90px;
+    height: 45px;
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 777px) {
   .heroContainer {
-    height: 50vh;
+    height: 70vh;
   }
-  .heroBanner{
-    height: 400px;
+  .heroBanner {
+    height: 70vh;
   }
   .heromsg h1 {
     font-size: 50px;
   }
   .heromsg p {
-    font-size: 12px;
+    font-size: 14px;
+  }
+  .heroInput{
+    margin-top: 15px;
   }
   .heroInput input {
-    width: 325px;
-    height: 30px;
+    width: 400px;
+    height: 40px;
+    padding: 15px;
   }
   .heroInput button {
     width: 65px;
-    height: 30px;
+    height: 40px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 530px) {
   .heroContainer {
-    height: 30vh;
+    height: 55vh;
   }
-  .heroBanner{
-    height: 300px;
+  .heroBanner {
+    height: 55vh;
   }
   .heromsg h1 {
-    font-size: 30px;
-  }
-  .heroInput {
-    margin-top: 10px;
+    font-size: 35px;
   }
   .heromsg p {
     font-size: 10px;
   }
+  .heroInput{
+    margin-top: 10px;
+  }
   .heroInput input {
-    width: 200px;
-    height: 25px;
-    padding: 10px;
+    width: 300px;
+    height: 30px;
+    padding: 15px;
   }
   .heroInput button {
-    width: 50px;
-    height: 25px;
+    width: 45px;
+    height: 30px;
     font-size: 8px;
   }
 }

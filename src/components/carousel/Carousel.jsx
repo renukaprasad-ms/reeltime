@@ -1,7 +1,6 @@
 import styles from "./Carousel.module.css";
 
 const Carousel = ({ data }) => {
-  console.log(data);
   const url = "https://image.tmdb.org/t/p/original";
   const poster = "https://movix-eta.vercel.app/assets/no-poster-af8294eb.png";
   return (

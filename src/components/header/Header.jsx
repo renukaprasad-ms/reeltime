@@ -4,17 +4,19 @@ import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [menuclicked, setMenuClicked] = useState(false);
   const handleMenu = () => {
-    setMenuClicked(!menuclicked);
+    setMenuClicked((prevState) => !prevState);
   };
+  const navigate = useNavigate();
   return (
     <div className={styles.headerContainer}>
       <div className={styles.logoSec}>
         <img src={logo} alt="logo" />
-        <h1>REELTIME</h1>
+        <p>REELTIME</p>
       </div>
       <div className={styles.categorySec}>
         <div className={styles.categoryContainer}>
@@ -26,15 +28,30 @@ const Header = () => {
         </div>
         <div className={styles.hamburgerMenu}>
           {menuclicked == false ? (
-            <RxHamburgerMenu size={20} onClick={handleMenu} />
+            <RxHamburgerMenu onClick={handleMenu} />
           ) : (
-            <RxCross1 size={20} onClick={handleMenu} />
+            <RxCross1 onClick={handleMenu} />
           )}
         </div>
-        <div className={menuclicked == true ? styles.popUpMenu : styles.invisible}>
-          <p>Movie</p>
-          <p>TV Shows</p>
-        </div>
+      </div>
+
+      <div
+        className={menuclicked == true ? styles.popUpMenu : styles.invisible}
+      >
+        <p
+          onClick={() => {
+            navigate("/explore");
+          }}
+        >
+          Movie
+        </p>
+        <p
+          onClick={() => {
+            navigate("/explore");
+          }}
+        >
+          TV Shows
+        </p>
       </div>
     </div>
   );
