@@ -1,0 +1,171 @@
+.exploreContainer{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    overflow-y: hidden;
+}
+.exploreHeader{
+    width: calc(100% - 200px);
+    height: 80px;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select {
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.select select{
+    color: white;
+    width: 48%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(63, 62, 62);
+}
+.exploreBody{
+    width: calc(100% - 200px);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3% 1%;
+    margin-top: 100px;
+}
+.card{
+    width: 19%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25%;
+    justify-content: center;
+}
+.cardImg{
+width: 100%;
+height: 350px;
+background-color: #fff;
+border-radius: 25px;
+}
+.cardImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+    border-radius: 25px;
+}
+.cardDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+@media screen and (max-width: 1200px){
+    .exploreHeader{
+        width: calc(100% - 150px);
+        height: 80px;
+        margin-top: 120px;
+    }
+    .exploreHeader h2{
+        font-size: 22px;
+    }
+    .select {
+        height: 40px;
+    }
+    .select select{
+        padding: 10px;
+        font-size: 10px;
+    }
+    .exploreBody{
+        width: calc(100% - 150px);
+        margin-top: 100px;
+    }
+    .card{
+        height: 400px;
+    }
+    .cardImg{
+    height: 320px;
+    }
+    .cardDetails{
+        font-size: 12px;
+        gap: 8px;
+    }
+}
+@media screen and (max-width: 777px){
+    .exploreHeader{
+        width: calc(100% - 100px);
+        height: 55px;
+        margin-top: 80px;
+    }
+    .exploreHeader h2{
+        font-size: 18px;
+    }
+    .select {
+        height: 30px;
+    }
+    .select select{
+        padding: 5px;
+        font-size: 8px;
+    }
+    .exploreBody{
+        width: calc(100% - 100px);
+        margin-top: 60px;
+    }
+    .exploreBody{
+        width: calc(100% - 100px);
+        margin-top: 70px;
+    }
+    .card{
+        height: 260px;
+    }
+    .cardImg{
+    height: 220px;
+    }
+    .cardDetails{
+        font-size: 8px;
+        gap: 5px;
+    }
+}
+@media screen and (max-width: 530px){
+    .exploreHeader{
+        width: calc(100% - 50px);
+        height: 40px;
+        margin-top: 40px;
+    }
+    .exploreHeader h2{
+        font-size: 12px;
+    }
+    .select {
+        height: 20px;
+    }
+    .select select{
+        font-size: 5px;
+    }
+    .exploreBody{
+        width: calc(100% - 50px);
+        margin-top: 30px;
+    }
+    .card{
+        height: 150px;
+    }
+    .cardImg{
+    height: 100px;
+    border-radius: 10px;
+    }
+    .cardImg img{
+    border-radius: 10px;
+    }
+    .cardDetails{
+        font-size: 5px;
+        gap: 5px;
+    }
+}

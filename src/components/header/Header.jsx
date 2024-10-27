@@ -14,14 +14,26 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.logoSec}>
+      <div className={styles.logoSec} onClick={() => {navigate("/")}}>
         <img src={logo} alt="logo" />
         <p>REELTIME</p>
       </div>
       <div className={styles.categorySec}>
         <div className={styles.categoryContainer}>
-          <div>Movie</div>
-          <div>TV Shows</div>
+          <div
+            onClick={() => {
+              navigate(`/Explore/${"movie"}`);
+            }}
+          >
+            Movie
+          </div>
+          <div
+            onClick={() => {
+              navigate(`/Explore/${"tv"}`);
+            }}
+          >
+            TV Shows
+          </div>
         </div>
         <div>
           <IoIosSearch size={20} />
