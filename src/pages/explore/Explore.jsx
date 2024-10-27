@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import poster from "../../assets/Poster.png";
 
 const Explore = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [pageNo, setPageNo] = useState(1);
   const [genres, setGenres] = useState([]);
   const { mediatype } = useParams();
@@ -14,6 +14,7 @@ const Explore = () => {
   const imgUrl = "https://image.tmdb.org/t/p/original";
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
+  const Mian_Url = `https://api.themoviedb.org/3/discover/${mediatype}?api_key=${Api_Key}&language=en-US&sort_by=${sortOpt}&include_adult=false&include_video=false&page=${pageNo}&with_genres=${genresId}`
 
   const getGenre = () => {
     fetch(
@@ -30,35 +31,40 @@ const Explore = () => {
       });
   };
   const fetchData = () => {
-    if (pageNo >= data?.total_pages) return;
-    fetch(`https://api.themoviedb.org/3/discover/${mediatype}?api_key=${Api_Key}&language=en-US&sort_by=${sortOpt}&include_adult=false&include_video=false&page=${pageNo}&with_genres=${genresId}
-`)
+    fetch(Mian_Url)
       .then((res) => res.json())
       .then((data) => {
-        setData((prevData) => ({
-          ...data,
-          results: [...(prevData?.results || []), ...data.results],
-        }));
+        console.log("fetched url  " + Mian_Url)
+        setData(data);
       })
       .catch((err) => console.log(err));
   };
-  const fetchNextData = () => {
+  const fetchNextData = (event) => {
     if (
       window.innerHeight + document.documentElement.scrollTop + 1 >
       document.documentElement.scrollHeight
     ) {
-      setLoader(true);
-      setPageNo((prev) => prev + 1);
-      setLoader(false);
+      setPageNo((prev) => {
+        const newPageNo = prev + 1;
+        fetch(`https://api.themoviedb.org/3/discover/${mediatype}?api_key=${Api_Key}&language=en-US&sort_by=${sortOpt}&include_adult=false&include_video=false&page=${newPageNo}&with_genres=${genresId}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.results) {
+              setData((prev) => ({ ...prev, results: [...(prev.results || []), ...data.results] }));
+            }
+          })
+          .catch((err) => console.log(err));
+        return newPageNo; 
+      });
     }
   };
   const handleGenerSelect = (event) => {
     setGenresId(event.target.value);
-    setPageNo("1");
+    setPageNo(1);
   };
   const handleSortSelect = (event) => {
     setSortOpt(event.target.value);
-    setPageNo("1");
+    setPageNo(1);
   };
   const handleCard = (id, name) => {
     if (name) {
@@ -74,10 +80,10 @@ const Explore = () => {
     getGenre();
   }, [mediatype]);
   useEffect(() => {
-    if (genresId) {
-      fetchData();
-    }
-  }, [pageNo, genresId, sortOpt]);
+      if(genresId) {
+        fetchData()
+      }
+  }, [ genresId, sortOpt]);
   useEffect(() => {
     window.addEventListener("scroll", fetchNextData);
   }, []);
@@ -113,9 +119,9 @@ const Explore = () => {
       </div>
       <div className={styles.exploreBody}>
         {data?.results.length > 0 ? (
-          data?.results.map((item) => (
+          data?.results.map((item,index) => (
             <div
-              key={item.id}
+            key={`${item.id}-${pageNo}-${index}`}
               className={styles.card}
               onClick={() => {
                 handleCard(item.id, item.original_name);
