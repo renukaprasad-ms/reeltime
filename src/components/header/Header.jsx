@@ -14,7 +14,12 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.logoSec} onClick={() => {navigate("/")}}>
+      <div
+        className={styles.logoSec}
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={logo} alt="logo" />
         <p>REELTIME</p>
       </div>
@@ -52,14 +57,16 @@ const Header = () => {
       >
         <p
           onClick={() => {
-            navigate("/explore");
+            navigate(`/Explore/${"movie"}`);
+            setMenuClicked(false);
           }}
         >
           Movie
         </p>
         <p
           onClick={() => {
-            navigate("/explore");
+            navigate(`/Explore/${"tv"}`);
+            setMenuClicked(false);
           }}
         >
           TV Shows
