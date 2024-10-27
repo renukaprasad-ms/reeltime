@@ -1,40 +1,56 @@
 import { useEffect, useState } from "react";
 import styles from "./Explore.module.css";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import poster from "../../assets/Poster.png";
 
 const Explore = () => {
   const [data, setData] = useState(null);
-  const [pageNo, setPageNo] = useState("1");
+  const [pageNo, setPageNo] = useState(1);
   const [genres, setGenres] = useState([]);
-  const  {mediatype}  = useParams();
-  const [genresId, setGenresId] = useState('');
+  const { mediatype } = useParams();
+  const [genresId, setGenresId] = useState("");
   const Api_Key = "99497792facc75d84ebfb64aa2cfc737";
   const [sortOpt, setSortOpt] = useState("popularity.desc");
   const imgUrl = "https://image.tmdb.org/t/p/original";
+  const [loader, setLoader] = useState(false);
+  const navigate = useNavigate();
 
   const getGenre = () => {
     fetch(
       `https://api.themoviedb.org/3/genre/${mediatype}/list?api_key=${Api_Key}&language=en-US`
     )
       .then((res) => res.json())
-      .then((gen) => {setGenres(gen.genres)
+      .then((gen) => {
+        setGenres(gen.genres);
         if (mediatype === "movie") {
-          setGenresId("28"); // Action
+          setGenresId("28");
         } else {
-          setGenresId("10759"); // Drama
+          setGenresId("10759");
         }
-
       });
   };
   const fetchData = () => {
+    if (pageNo >= data?.total_pages) return;
     fetch(`https://api.themoviedb.org/3/discover/${mediatype}?api_key=${Api_Key}&language=en-US&sort_by=${sortOpt}&include_adult=false&include_video=false&page=${pageNo}&with_genres=${genresId}
 `)
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setData((prevData) => ({
+          ...data,
+          results: [...(prevData?.results || []), ...data.results],
+        }));
       })
       .catch((err) => console.log(err));
+  };
+  const fetchNextData = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >
+      document.documentElement.scrollHeight
+    ) {
+      setLoader(true);
+      setPageNo((prev) => prev + 1);
+      setLoader(false);
+    }
   };
   const handleGenerSelect = (event) => {
     setGenresId(event.target.value);
@@ -44,9 +60,16 @@ const Explore = () => {
     setSortOpt(event.target.value);
     setPageNo("1");
   };
+  const handleCard = (id, name) => {
+    if (name) {
+      navigate(`/Details/tv/${id}`);
+    } else {
+      navigate(`/Details/movie/${id}`);
+    }
+  };
   useEffect(() => {
-    mediatype == "movie" ? setGenresId("28") : setGenresId("10759")
-  },[mediatype])
+    mediatype == "movie" ? setGenresId("28") : setGenresId("10759");
+  }, [mediatype]);
   useEffect(() => {
     getGenre();
   }, [mediatype]);
@@ -55,6 +78,9 @@ const Explore = () => {
       fetchData();
     }
   }, [pageNo, genresId, sortOpt]);
+  useEffect(() => {
+    window.addEventListener("scroll", fetchNextData);
+  }, []);
   return (
     <div className={styles.exploreContainer}>
       <div className={styles.exploreHeader}>
@@ -86,27 +112,34 @@ const Explore = () => {
         </div>
       </div>
       <div className={styles.exploreBody}>
-        {data?.results.length > 0 ?(data?.results.map((item) => (
-          <div key={item.id} className={styles.card}>
-            <div className={styles.cardImg}>
-              <img
-                src={
-                  (item.poster_path && imgUrl + item?.poster_path) ||
-                  (item.backdrop_path && imgUrl + item?.backdrop_path) ||
-                  poster
-                }
-                alt="poster"
-              />
+        {data?.results.length > 0 ? (
+          data?.results.map((item) => (
+            <div
+              key={item.id}
+              className={styles.card}
+              onClick={() => {
+                handleCard(item.id, item.original_name);
+              }}
+            >
+              <div className={styles.cardImg}>
+                <img
+                  src={
+                    (item.poster_path && imgUrl + item?.poster_path) ||
+                    (item.backdrop_path && imgUrl + item?.backdrop_path) ||
+                    poster
+                  }
+                  alt="poster"
+                />
+              </div>
+              <div className={styles.cardDetails}>
+                <p>{item.original_name || item.original_title}</p>
+                <p>{item.first_air_date || item.release_date}</p>
+              </div>
             </div>
-            <div className={styles.cardDetails}>
-              {
-                console.log(item)
-              }
-              <p>{item.original_name || item.original_title}</p>
-              <p>{item.first_air_date || item.release_date}</p>
-            </div>
-          </div>
-        ))) : <p>Select Different genre</p>}
+          ))
+        ) : (
+          <p>Select Different genre</p>
+        )}
       </div>
     </div>
   );
