@@ -117,6 +117,7 @@ const Explore = () => {
           </select>
         </div>
       </div>
+      <hr />
       <div className={styles.exploreBody}>
         {data?.results.length > 0 ? (
           data?.results.map((item,index) => (

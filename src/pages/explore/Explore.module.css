@@ -8,6 +8,11 @@
     color: white;
     overflow-y: hidden;
 }
+.exploreContainer hr {
+    width: 90%;
+    margin-top: 2%;
+    opacity: 0.5;
+}
 .exploreHeader{
     width: calc(100% - 200px);
     height: 80px;
@@ -125,6 +130,7 @@ border-radius: 25px;
         margin-top: 70px;
     }
     .card{
+        width: 24%;
         height: 260px;
     }
     .cardImg{
@@ -155,10 +161,10 @@ border-radius: 25px;
         margin-top: 30px;
     }
     .card{
-        height: 150px;
+        height: 180px;
     }
     .cardImg{
-    height: 100px;
+    height: 140px;
     border-radius: 10px;
     }
     .cardImg img{

@@ -33,7 +33,7 @@ const Carousel = ({ data }) => {
               </p>
             </div>
             <h3>{item?.original_title || item.original_name}</h3>
-            <p>{item?.release_date}</p>
+            <p className={styles.date}>{item?.release_date}</p>
           </div>
         ))}
       </div>

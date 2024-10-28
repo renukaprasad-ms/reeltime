@@ -11,7 +11,9 @@ const Hero = () => {
   const img =
     img_URL + data?.results[Math.floor(Math.random() * 20)].backdrop_path;
   const handleSearch = () => {
-    navigate(`/search/${query}/media`);
+    if (query) {
+      navigate(`/search/${query}/media`);
+    }
   };
   return (
     <div className={styles.heroContainer}>

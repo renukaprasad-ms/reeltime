@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import styles from "./SearchPage.module.css";
 import { useEffect, useState } from "react";
+import poster from "../../assets/poster.png";
 
 const SearchPage = () => {
   const { query } = useParams();
@@ -25,11 +26,30 @@ const SearchPage = () => {
   console.log(data);
   return (
     <div className={styles.searchContainer}>
-      {data?.results?.map((item) => (
-        <div className={styles.card}>
-          <img src={imgUrl + item.poster_path} alt="" />
-        </div>
-      ))}
+      <div className={styles.searchHeader}>
+        {data?.results?.length < 1 ? (
+          <h2>No Results Found For : {query}</h2>
+        ) : (
+          <h2>Showing Results For : {query}</h2>
+        )}
+      </div>
+      <hr />
+      <div className={styles.serchBody}>
+        {data?.results?.map((item) => (
+          <div className={styles.searchCard} key={item.id}>
+            <div className={styles.searchCardImg}>
+              <img
+                src={item.poster_path ? imgUrl + item.poster_path : poster}
+                alt=""
+              />
+            </div>
+            <div className={styles.cardDetails}>
+              <h3>{item.original_title || item.original_name}</h3>
+              <p>{item.release_date || item.first_air_date }</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
