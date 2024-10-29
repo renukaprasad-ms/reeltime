@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import styles from "./SearchPage.module.css";
 import { useEffect, useState } from "react";
-import poster from "../../assets/poster.png";
+import poster from "../../assets/Poster.png";
 
 const SearchPage = () => {
   const { query } = useParams();
