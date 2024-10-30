@@ -1,0 +1,123 @@
+.details{
+    width: 100%;
+    height: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailsContainer{
+    width: calc(100% - 200px);
+}
+.detailsCard{
+    width: 100%;
+    height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.detailsCardImg {
+    width: 30%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+.detailsCardImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+    border-radius: 25px;
+}
+.detailsCardDetails{
+    width: 65%;
+    padding: 2% 7%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.detailsCardDetails h4{
+    opacity: 0.5;
+}
+.genres{
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.genres p{
+    width: auto;
+    height: 17px;
+    padding: 5px;
+    background-color: #DA2F68;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.ratingDiv{
+    width: 450px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.ratingCircle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.videoBtn{
+    width: 70%;
+    height: 66%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    color: inherit;
+    transition: color 1s ease;
+}
+
+.videoBtn:hover{
+    color: red;
+}
+.palyIcon{
+    width: 120px;
+    height: 120px;
+    font-size: 2rem;
+}
+.overview{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.status{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+.status h2{
+    width: auto;
+}
+.status span{
+    opacity: 0.5;
+    font-size: 15px;
+}
+hr{
+    margin-top: 20px;
+    opacity: 0.3;
+}

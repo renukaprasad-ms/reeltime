@@ -1,0 +1,50 @@
+.cast {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.castCarousel {
+  margin-left: 100px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  overflow-x: auto;
+  /* gap: 20px; */
+}
+.carouselCard {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  flex: 0 0 auto;
+}
+.cardImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.cardImg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  opacity: 1;
+  object-fit: cover;
+}
+.castDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.castDetails p {
+    opacity: 0.5;
+    font-size: 12px;
+}
