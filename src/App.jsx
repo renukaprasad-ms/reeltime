@@ -8,7 +8,6 @@ import Details from "./pages/details/Details";
 import SearchPage from "./pages/searchpage/SearchPage";
 
 function App() {
-  console.log("testing")
   return (
     <BrowserRouter>
       <Header />
